@@ -680,3 +680,5 @@ vim.opt.mouse  		= 'a'
 -- Keybindings
 vim.keymap.set('n', "<Space>", ":")
 vim.keymap.set('n', "<C-j>", "4j")
+vim.keymap.set('n', "<C-Shift-k>", "4k")
+vim.keymap.set('n', ";;", ":Neotree<CR>")
