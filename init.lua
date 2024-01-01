@@ -266,7 +266,7 @@ require('lazy').setup({
   --    Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
 }, {})
 
 -- [[ Setting options ]]
@@ -659,3 +659,24 @@ cmp.setup {
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+
+-- Setting the cursor
+vim.cmd [[
+augroup RestoreCursorShapeOnExit
+    autocmd!
+    autocmd VimLeave * set guicursor=a:ver20
+augroup END
+]]
+
+-- Basic Setting
+vim.opt.tabstop 	= 4
+vim.opt.shiftwidth 	= 4
+vim.opt.expandtab 	= false -- Transform a Tab into Spaces
+vim.opt.hlsearch	= true  -- Hightlight the result of search
+vim.opt.breakindent	= true  -- Preserve the indentation of a virtual line. 
+vim.opt.mouse  		= 'a'
+
+-- Keybindings
+vim.keymap.set('n', "<Space>", ":")
+vim.keymap.set('n', "<C-j>", "4j")
